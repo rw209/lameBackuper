@@ -2,7 +2,6 @@
 package main
 
 import (
-	"fmt"
 	"os"
 	"path/filepath"
 	"strings"
@@ -28,7 +27,6 @@ func dirlist(adress string) []string {
 				outlist = append(outlist, file)
 			}
 		}
-		fmt.Println(outlist)
 		return outlist
 
 	} else {
