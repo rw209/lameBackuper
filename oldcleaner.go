@@ -7,15 +7,15 @@ import (
 	"time"
 )
 
-func dirlistener(input string) { //Получаем путь к нужной папке, и понеслась
+func oldcleaner(input string) { //Получаем путь к нужной папке, и понеслась
 	files, err := ioutil.ReadDir(input) //читаем папку, получаем массив из списка обЪектов в ней
 
 	if err != nil {
-		loger("dirlistener() files ioutil.ReadDir", err)
+		loger("oldcleaner() files ioutil.ReadDir", err)
 	}
 
 	for _, file := range files { // проходимся по этому массиву
-		if filepath.Ext(file.Name()) == ".7z" { //и если расширение .7z
+		if filepath.Ext(file.Name()) == ".zip" { //и если расширение .zip
 
 			CompareTime(file.ModTime().Format(config.System.TimeFormat), file.Name())
 			//получили нужную нам дату в нужном формате но в типе string и передаем
