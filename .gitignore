@@ -1,5 +1,5 @@
 # Binaries for programs and plugins
-
+winBuild.sh
 *.exe~
 *.dll
 *.so
