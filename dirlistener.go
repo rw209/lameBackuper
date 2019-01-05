@@ -2,6 +2,7 @@
 package main
 
 import (
+	"fmt"
 	"os"
 	"path/filepath"
 	"strings"
@@ -22,11 +23,12 @@ func dirlist(adress string) []string {
 	}
 	if wCardBool == true { //wildCard filter
 
-		for i, file := range rawlist {
-			if fileinf[i].IsDir() == true || filepath.Ext(file) == ext {
+		for _, file := range rawlist {
+			if filepath.Ext(file) == ext {
 				outlist = append(outlist, file)
 			}
 		}
+		fmt.Println(outlist)
 		return outlist
 
 	} else {
